@@ -25,3 +25,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.env
+My First Project-62e5d12f8294.json

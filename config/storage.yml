@@ -6,6 +6,13 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+
+google:
+  service: GCS
+  credentials: <%= Rails.root.join("./My First Project-62e5d12f8294.json") %>
+  project: "graphite-earth-246401"
+  bucket: "saveforlater"
+
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
