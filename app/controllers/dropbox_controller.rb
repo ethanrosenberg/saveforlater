@@ -5,7 +5,7 @@ require 'open-uri'
 class DropboxController < ApplicationController
 
   def call
-
+#azure vision?
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
         response = image_annotator.label_detection(
