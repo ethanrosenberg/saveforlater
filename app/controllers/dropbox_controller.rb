@@ -11,7 +11,6 @@ class DropboxController < ApplicationController
         response = image_annotator.label_detection(
           image: "https://storage.googleapis.com/saveforlater/AYsGu5VoTx6sjMJ5uFjfNKMn",
           #max_results: 15 # optional, defaults to 10
-        )
 
         text = []
         response.responses.each do |res|
@@ -32,6 +31,8 @@ byebug
     results = []
 
     token = ENV["DROPBOX_OAUTH_BEARER"]
+    #token = ENV["DROPBOX_OAUTH_BEARER"]
+    #switch to icloud?
     client = DropboxApi::Client.new(token)
 
     result = client.list_folder '/photos'
