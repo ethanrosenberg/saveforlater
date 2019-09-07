@@ -20,7 +20,7 @@ class DropboxController < ApplicationController
             text << content
           end
         end
-byebug
+
 
   end
 
