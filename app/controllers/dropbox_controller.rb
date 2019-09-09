@@ -9,18 +9,18 @@ class DropboxController < ApplicationController
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
         response = image_annotator.label_detection(
-          image: "https://storage.googleapis.com/saveforlater/AYsGu5VoTx6sjMJ5uFjfNKMn",
+          image: "https://storage.googleapis.com/saveforlater/AYsGu5VoTx6sjMJ5uFjfNKMn" )
           #max_results: 15 # optional, defaults to 10
 
         text = []
         response.responses.each do |res|
-          byebug
+          #byebug
           res.label_annotations.each do |annotation|
-            content = annotation.description.gsub(/\R+/, ' ')
+            content = annotation.description.gsub(/\R+/, ' ').downcase
             text << content
           end
         end
-
+byebug
 
   end
 
