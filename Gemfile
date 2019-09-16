@@ -11,6 +11,7 @@ gem 'google-cloud-vision'
 gem 'google-cloud-storage'
 
 gem 'twilio-ruby'
+gem 'ruby-readability', require: 'readability'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

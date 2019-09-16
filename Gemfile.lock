@@ -111,6 +111,7 @@ GEM
     grpc (1.22.0)
       google-protobuf (~> 3.8)
       googleapis-common-protos-types (~> 1.0)
+    guess_html_encoding (0.0.11)
     httpclient (2.8.3)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -189,6 +190,9 @@ GEM
       uber (< 0.2.0)
     retriable (3.1.2)
     rly (0.2.3)
+    ruby-readability (0.7.0)
+      guess_html_encoding (>= 0.0.4)
+      nokogiri (>= 1.6.0)
     ruby_dep (1.5.0)
     signet (0.11.0)
       addressable (~> 2.3)
@@ -234,6 +238,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-cors
   rails (~> 5.2.3)
+  ruby-readability
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

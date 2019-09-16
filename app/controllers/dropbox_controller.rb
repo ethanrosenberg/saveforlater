@@ -5,6 +5,24 @@ require 'open-uri'
 class DropboxController < ApplicationController
 
   def call
+
+
+
+    reading_result = Readability::Document.new(open('https://www.cnn.com/2019/09/15/australia/australia-magpie-death-intl-hnk-scli/index.html').read)
+   if reading_result.nil?
+     empty_results
+   else
+     {
+       :title    => reading_result.title,
+       :content  => reading_result.content,
+      # :images   => reading_result.images,
+       :author   => reading_result.author
+     }
+   end
+
+   byebug
+
+
 #azure vision?
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
