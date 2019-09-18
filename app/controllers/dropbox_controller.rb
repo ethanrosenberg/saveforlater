@@ -4,21 +4,27 @@ require 'open-uri'
 
 class DropboxController < ApplicationController
 
+
+  def read(url)
+      reading_result = Readability::Document.new(open(url).read)
+      if reading_result.nil?
+        empty_results
+      else
+        {
+          :title    => reading_result.title,
+          :content  => reading_result.content,
+          :images   => reading_result.images,
+          :author   => reading_result.author
+        }
+      end
+    end
+
+
+
   def call
 
+  result = read('https://www.cnn.com/2019/09/15/australia/australia-magpie-death-intl-hnk-scli/index.html')
 
-
-    reading_result = Readability::Document.new(open('https://www.cnn.com/2019/09/15/australia/australia-magpie-death-intl-hnk-scli/index.html').read)
-   if reading_result.nil?
-     empty_results
-   else
-     {
-       :title    => reading_result.title,
-       :content  => reading_result.content,
-      # :images   => reading_result.images,
-       :author   => reading_result.author
-     }
-   end
 
    byebug
 
