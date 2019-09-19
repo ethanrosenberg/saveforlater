@@ -13,11 +13,17 @@ class DropboxController < ApplicationController
         {
           :title    => reading_result.title,
           :content  => reading_result.content,
-          :images   => reading_result.images,
+          #:images   => reading_result.images,
           :author   => reading_result.author
         }
       end
     end
+
+   def empty_results
+     { title: nil, content: nil, images: [], author: nil, language: nil}
+   end
+
+
 
 
 
